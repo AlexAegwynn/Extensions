@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "TPopup",
+  "version": "1.0",
+
+  "description": "Test Popup",
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_icon": "icons/32.png",
+    "default_title": "Popup",
+    "default_popup": "html/index.html"
+  }
+}
