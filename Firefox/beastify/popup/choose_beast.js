@@ -14,10 +14,6 @@ function listenForClicks() {
             });
         }
 
-        /**
-         * Remove the page-hiding CSS from the active tab,
-         * send a "reset" message to the content script in the active tab.
-         */
         // function reset(tabs) {
         //     browser.tabs.removeCSS({ code: hidePage }).then(() => {
         //         browser.tabs.sendMessage(tabs[0].id, {
