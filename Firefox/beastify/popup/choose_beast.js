@@ -5,12 +5,19 @@ const hidePage = `body > :not(.beastify-image) {
                   }`;
 
 function listenForClicks() {
+
     document.addEventListener("click", (e) => {
 
         function beastify(tabs) {
+
+            var search = document.querySelector("#search").value;
+            var path = document.querySelector("#path").value;
+
             //发送一个消息，两个js文件之间通过Msg通信。
             browser.tabs.sendMessage(tabs[0].id, {
-                command: "beastify"
+                command: "beastify",
+                contents: search,
+                path: path
             });
         }
 
