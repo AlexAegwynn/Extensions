@@ -9,53 +9,51 @@
         // console.log(search);
         // console.log(path);
 
-        // let arr = search.split('，');
-        // console.log(arr);
-        // arr.forEach(element => {
-        //     $('#q').val(element);
-        //     $('.icon-btn-search').click();
-        // });
+        let arr = search.split('，');
+        console.log(arr);
+        arr.forEach(element => {
+            (function (element) {
+                setTimeout(function () {
+                    $('#q').val(element);
+                    $('.icon-btn-search').click();
+                }, 10);
+            })(element)
+        });
 
-        let ifr = document.createElement('iframe');
-        ifr.id = 'ifr';
-        ifr.src = document.location.href;
-        ifr.style.display = "none";
+        // var credit = '';
 
-        if (!ifr.attachEvent) {
-            ifr.onload = function () {
-                let ifrcontent = ifr.contentDocument.body.getElementsByClassName('rank').item(0).href;
+        // let ifr = document.createElement('iframe');
+        // ifr.src = document.location.href;
+        // ifr.style.display = "none";
 
-                console.log(ifrcontent);
-                ifr.remove();
+        // if (!ifr.attachEvent) {
+        //     ifr.onload = function () {
+        //         let url = ifr.contentDocument.body.getElementsByClassName('rank').item(0).href;
+        //         let name = ifr.contentDocument.body.getElementsByClassName('shop-name').item(0).innerHTML;
 
-            };
-        }
-
-        document.body.appendChild(ifr);
-        
-        let credit = document.createElement('iframe');
-        credit.id = 'credit';
-        credit.src = "https://rate.taobao.com/user-rate-UMmNuMFc0vCvYvWTT.htm"; //ifrcontent;
-        // credit.style.display = "none";
-
-        if (!credit.attachEvent) {
-            credit.onload = function () {
-                // .document.body.getElementsByClassName('sep')
-                let creditcontent = credit.contentDocument;
-                console.log(creditcontent);
-                credit.remove();
-            }
-        }
-
-        document.body.appendChild(credit);
-
-        // var a = document.createElement('a');
-        // a.setAttribute('href', 'data:text/html;gb2312,' + search);
-        // a.setAttribute('download', 'test.txt');
-        // a.setAttribute('target', '_blank');
-        // a.style.display = "none";
-        // document.body.appendChild(a);
-        // a.click();
+        //         fetch(url)
+        //             .then(function (response) {
+        //                 return response.text()
+        //             })
+        //             .then(function (body) {
+        //                 let creditEle = document.createElement('div');
+        //                 creditEle.innerHTML = body;
+        //                 let creditcontent = creditEle.getElementsByClassName('sep')[0].firstElementChild.firstChild;
+        //                 let creditValue = creditcontent.nodeValue.replace(/[\'\"\\\/\b\f\n\r\t]/g, '');
+        //                 credit += name.replace(/[\'\"\\\/\b\f\n\r\t\s]/g, '') + ' ' + creditValue + '\n';
+        //                 var a = document.createElement('a');
+        //                 a.setAttribute('href', 'data:text/html;gb2312,' + credit);
+        //                 a.setAttribute('download', 'test.txt');
+        //                 a.setAttribute('target', '_blank');
+        //                 a.style.display = "none";
+        //                 document.body.appendChild(a);
+        //                 a.click();
+        //                 console.log(credit);
+        //             })
+        //         ifr.remove();
+        //     };
+        // }
+        // document.body.appendChild(ifr);
     }
 
     function removeExistingBeasts() {
