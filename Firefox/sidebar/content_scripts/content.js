@@ -63,6 +63,8 @@
           }, 10);
         })(arr[i])
       }
+
+      // Save();
     } else {
       console.error('Error: 店铺名为空');
     }
@@ -104,6 +106,11 @@
     //   };
     // }
     // document.body.appendChild(ifr);
+  }
+
+  function Save() {
+    let e = $('#credit');
+    console.log(e);
   }
 
   /*
